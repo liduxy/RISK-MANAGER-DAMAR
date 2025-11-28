@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Register - Sistem Informasi Akademik Baru</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.1em;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        
+        .low { background-color: #2ecc71; }
+        .medium { background-color: #f39c12; }
+        .high { background-color: #e74c3c; }
+        
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 900px;
+        }
+        
+        th {
+            background-color: #3498db;
+            color: white;
+            text-align: left;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e8f4fc;
+        }
+        
+        .risk-level {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 80px;
+        }
+        
+        .low-risk { background-color: #d5f4e6; color: #27ae60; }
+        .medium-risk { background-color: #fdebd0; color: #d35400; }
+        .high-risk { background-color: #fadbd8; color: #c0392b; }
+        
+        .mitigation-plan {
+            max-width: 300px;
+        }
+        
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.9em;
+            padding-top: 20px;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Risk Register</h1>
+            <div class="subtitle">Implementasi Sistem Informasi Akademik Baru</div>
+            
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color low"></div>
+                    <span>Risiko Rendah</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color medium"></div>
+                    <span>Risiko Sedang</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color high"></div>
+                    <span>Risiko Tinggi</span>
+                </div>
+            </div>
+        </header>
+        
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Risiko</th>
+                        <th>Deskripsi Risiko</th>
+                        <th>Sumber Risiko</th>
+                        <th>Dampak</th>
+                        <th>Kemungkinan</th>
+                        <th>Level Risiko</th>
+                        <th>Rencana Mitigasi</th>
+                        <th>Penanggung Jawab</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>R-01</strong></td>
+                        <td>Keterlambatan peluncuran sistem dari jadwal yang telah ditetapkan.</td>
+                        <td>Perubahan ruang lingkup, keterlambatan vendor, bug kritis.</td>
+                        <td>Tinggi</td>
+                        <td>Tinggi</td>
+                        <td><span class="risk-level high-risk">Tinggi</span></td>
+                        <td class="mitigation-plan">
+                            1. Rencana proyek detail dengan milestone jelas.<br>
+                            2. Rapat koordinasi mingguan.<br>
+                            3. Klausul denda dalam kontrak vendor.<br>
+                            4. Metode agile untuk iterasi cepat.
+                        </td>
+                        <td><strong>Project Manager</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>R-02</strong></td>
+                        <td>Gangguan jaringan atau server down yang mengakibatkan sistem tidak dapat diakses.</td>
+                        <td>Infrastruktur IT tidak memadai, serangan siber, kesalahan konfigurasi.</td>
+                        <td>Sedang</td>
+                        <td>Sedang</td>
+                        <td><span class="risk-level medium-risk">Sedang</span></td>
+                        <td class="mitigation-plan">
+                            1. Audit dan upgrade infrastruktur.<br>
+                            2. Sistem redundansi dan backup server.<br>
+                            3. SOP penanganan insiden.<br>
+                            4. Kerja sama dengan provider andal.
+                        </td>
+                        <td><strong>Kepala Bagian IT</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>R-03</strong></td>
+                        <td>Kurangnya pelatihan staf sehingga pengguna tidak dapat mengoperasikan sistem dengan optimal.</td>
+                        <td>Kurang anggaran, jadwal tidak menjangkau semua, materi tidak efektif.</td>
+                        <td>Tinggi</td>
+                        <td>Tinggi</td>
+                        <td><span class="risk-level high-risk">Tinggi</span></td>
+                        <td class="mitigation-plan">
+                            1. Modul pelatihan komprehensif.<br>
+                            2. Pelatihan bertahap dan berulang.<br>
+                            3. Video tutorial dan dokumentasi.<br>
+                            4. Menunjuk "super user" di setiap unit.
+                        </td>
+                        <td><strong>Ketua Tim Implementasi</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>R-04</strong></td>
+                        <td>Kebocoran data pribadi mahasiswa (NIM, nilai, informasi finansial).</td>
+                        <td>Kerentanan keamanan, kesalahan konfigurasi akses, ancaman orang dalam.</td>
+                        <td>Tinggi</td>
+                        <td>Rendah</td>
+                        <td><span class="risk-level high-risk">Tinggi</span></td>
+                        <td class="mitigation-plan">
+                            1. Penetration test dan audit keamanan.<br>
+                            2. Enkripsi data dan prinsip least privilege.<br>
+                            3. Kebijakan keamanan data dan pelatihan.<br>
+                            4. Rencana tanggap darurat kebocoran data.
+                        </td>
+                        <td><strong>CISO / Kepala IT</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>R-05</strong></td>
+                        <td>Ketidakakuratan data selama proses migrasi dari sistem lama ke sistem baru.</td>
+                        <td>Format data tidak kompatibel, script migrasi error, tidak ada validasi.</td>
+                        <td>Sedang</td>
+                        <td>Sedang</td>
+                        <td><span class="risk-level medium-risk">Sedang</span></td>
+                        <td class="mitigation-plan">
+                            1. Mapping dan pembersihan data di sistem lama.<br>
+                            2. Trial migrasi dengan sampel data.<br>
+                            3. Validasi dan rekonsiliasi data pasca migrasi.<br>
+                            4. Cadangan data sistem lama.
+                        </td>
+                        <td><strong>Tim Data Management & Vendor</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <footer>
+            <p>Dibuat untuk Proyek Implementasi Sistem Informasi Akademik Baru</p>
+        </footer>
+    </div>
+</body>
+</html>
